@@ -1,0 +1,69 @@
+
+<!-- saved from url=(0243)https://geo.cardinalcommerce.com/DeviceFingerprintWeb/V2/Browser/Render?threatmetrix=true&alias=Default&orgUnitId=58908a0f33fadd2b887d0dcd&tmEventType=PAYMENT&referenceId=0_01647c3e-06c5-4cfb-8ae3-253060dce33a&geolocation=false&origin=Songbird -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script type="text/javascript" src="./jquery.min.js(1).&#1041;&#1077;&#1079; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;"></script>
+    <script type="text/javascript" src="./json3.min.js.&#1041;&#1077;&#1079; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;"></script>
+    <script type="text/javascript" src="./6d028a6f5c5c7a8f8dbd924b0fc274afbf37412e.min.js.&#1041;&#1077;&#1079; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;"></script>
+    <script type="text/javascript" src="./profiler.min.js.&#1041;&#1077;&#1079; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;"></script>
+    <script type="text/javascript" src="./acsprofiler.min.js.&#1041;&#1077;&#1079; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;"></script>
+  </head>
+  <body>
+    <input type="hidden" id="alias" name="alias" value="Default">
+    <input type="hidden" id="binConfigIdentifiers" name="binConfigIdentifiers" value="null">
+    <input type="hidden" id="deviceChannel" name="deviceChannel" value="Browser">
+    <input type="hidden" id="domain" name="domain" value="MERCHANT">
+    <input type="hidden" id="environment" name="environment" value="PROD">
+    <input type="hidden" id="geolocation" name="geolocation" value="false">
+    <input type="hidden" id="methodUrls" name="methodUrls" value="[]">
+    <input type="hidden" id="nonce" name="nonce" value="null">
+    <input type="hidden" id="orgUnitId" name="orgUnitId" value="58908a0f33fadd2b887d0dcd">
+    <input type="hidden" id="origin" name="origin" value="Songbird">
+    <input type="hidden" id="referenceId" name="referenceId" value="0_01647c3e-06c5-4cfb-8ae3-253060dce33a">
+    <input type="hidden" id="threatMetrixEnabled" name="threatMetrixEnabled" value="false">
+    <input type="hidden" id="threatMetrixDelay" name="threatMetrixDelay" value="0">
+    <input type="hidden" id="tmEventType" name="tmEventType" value="PAYMENT">
+
+    <script type="text/javascript">
+      $(function() {
+        try {
+            var profileConfigurations = {
+              referenceId: document.getElementById("referenceId").value,
+              orgUnitId: document.getElementById("orgUnitId").value,
+              features: {
+                binConfigIdentifiers: document.getElementById("binConfigIdentifiers").value,
+                cardinalDataCollection: true,
+                geolocation: document.getElementById("geolocation").value,
+                merchantMethodUrlCollection: {
+                  methodUrls: document.getElementById("methodUrls").value,
+                },
+                threatMetrix: {
+                  alias: document.getElementById("alias").value,
+                  enabled: document.getElementById("threatMetrixEnabled").value,
+                  eventType: document.getElementById("tmEventType").value,
+                  delay: document.getElementById("threatMetrixDelay").value
+                }
+              },
+              origin: document.getElementById("origin").value,
+              deviceChannel: document.getElementById("deviceChannel").value,
+              domain: document.getElementById("domain").value,
+              environment: document.getElementById("environment").value,
+              nonce: document.getElementById("nonce").value
+            };
+          profiler.start(profileConfigurations);
+        } catch (error) {
+          try {
+            var log = new Logger({
+              domain: document.getElementById("domain").value,
+              environment: document.getElementById("environment").value,
+              sessionId: document.getElementById("referenceId").value,
+            });
+            log.error('Failed while attempting to run profiler: ' + error);
+          } catch (e) { /* eat exception if we can't log */ }
+        }
+      });
+    </script>
+    
+
+    
+  
+</body></html>
